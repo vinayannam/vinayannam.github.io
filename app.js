@@ -13,7 +13,8 @@ window.addEventListener('resize', function() {
 
 const prop = {
     colors: ['#2C3E50', '#E74C3C', '#ECF0F1', '#3498DB', '#2980B9'],
-    linkRadius: 40
+    linkRadius: 50,
+    count: 150
 }
 
 let checkDistance = function(x1, y1, x2, y2) {
@@ -26,7 +27,8 @@ let linkPoints = function(circle, circles) {
         let opacity = 1 - distance / prop.linkRadius;
         if (opacity > 0) {
             c.lineWidth = 0.5;
-            c.strokeStyle = `rgba(200, 200, 200, ${opacity})`;
+            var rgb = hexToRgb(circle.color);
+            c.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity})`;
             c.beginPath();
             c.moveTo(circle.x, circle.y);
             c.lineTo(circles[i].x, circles[i].y);
@@ -35,6 +37,15 @@ let linkPoints = function(circle, circles) {
         }
     }
 };
+
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
 
 function Circle(x, y, r) {
     const randomNumber = Math.floor(Math.random() * 4)
@@ -94,10 +105,10 @@ function Circle(x, y, r) {
 let circleArray = []
 
 function init() {
-    for (let i = 0; i < 400; i++) {
+    for (let i = 0; i < prop.count; i++) {
         const randomX = Math.random() * canvas.width
         const randomY = Math.random() * canvas.height
-        const randomR = Math.random() * 5
+        const randomR = Math.random() * 8
         circleArray.push(
             new Circle(randomX, randomY, randomR)
         )

@@ -5,6 +5,10 @@ body {
     font-family: Futura, sans-serif;
 }
 
+a {
+    color: inherit;
+}
+
 #canvas,
 #text {
     position: absolute;
@@ -12,6 +16,13 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+img {
+    opacity: 1 !important;
+    height: 20vmin;
+    border-radius: 50%;
+    border: 6px solid rgb(219, 219, 219);
 }
 
 #text {
@@ -37,4 +48,34 @@ body {
 .sub {
     font-size: 2vmin;
     cursor: pointer;
+}
+
+.links {
+    font-size: 4vmin;
+    color: #999;
+    transition: 0.5s ease-in-out;
+}
+
+.links i {
+    margin-right: 20px;
+}
+
+i:hover:nth-child(1) {
+    color: #333;
+}
+
+i:hover:nth-child(2) {
+    color: #3b5998;
+}
+
+i:hover:nth-child(3) {
+    color: #0077b5;
+}
+
+i:hover:nth-child(4) {
+    color: #1da1f2;
+}
+
+i:hover:nth-child(5) {
+    color: #1da1f2;
 }
