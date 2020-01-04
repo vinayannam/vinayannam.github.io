@@ -28,6 +28,7 @@ canvas.addEventListener('mousemove', function (event) {
     var rect = canvas.getBoundingClientRect();
     mouseX = event.clientX - rect.left;
     mouseY = event.clientY - rect.top;
+    alert(mouseX + '' + mouseY)
 })
 
 let linkPoints = function (circle, circles) {
@@ -100,9 +101,8 @@ function Circle(x, y, r) {
     this.draw = function () {
         c.beginPath()
         c.arc(
-            mouseX, mouseY,
-            // this.x,
-            // this.y,
+            this.x,
+            this.y,
             Math.abs(this.r),
             0,
             Math.PI * 2
