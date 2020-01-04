@@ -6,7 +6,7 @@ canvas.height = window.innerHeight
 
 const maxRadius = 35
 
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 })
@@ -17,11 +17,24 @@ const prop = {
     count: 150
 }
 
-let checkDistance = function(x1, y1, x2, y2) {
+let checkDistance = function (x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 };
 
-let linkPoints = function(circle, circles) {
+var mouseX = 0;
+var mouseY = 0;
+
+let mousePos = function (canvas, event) {
+    var rect = canvas.getBoundingClientRect();
+    mouseX = event.clientX - rect.left;
+    mouseY = event.clientY - rect.top;
+}
+
+canvas.addEventListener('mousemove', function (event) {
+    mousePos(canvas, event)
+})
+
+let linkPoints = function (circle, circles) {
     for (let i = 0; i < circles.length; i++) {
         let distance = checkDistance(circle.x, circle.y, circles[i].x, circles[i].y);
         let opacity = 1 - distance / prop.linkRadius;
@@ -68,7 +81,7 @@ function Circle(x, y, r) {
         this.dy = Math.random() * 1
     }
 
-    this.update = function() {
+    this.update = function () {
         this.x += this.dx
         this.y += this.dy
 
@@ -88,11 +101,12 @@ function Circle(x, y, r) {
         this.draw()
     }
 
-    this.draw = function() {
+    this.draw = function () {
         c.beginPath()
         c.arc(
-            this.x,
-            this.y,
+            mouseX, mouseY,
+            // this.x,
+            // this.y,
             Math.abs(this.r),
             0,
             Math.PI * 2
