@@ -120,7 +120,7 @@ function init() {
         const randomY = Math.random() * canvas.height
         const randomR = Math.random() * 8
         circleArray.push(
-            new Circle(randomX, randomY, randomR)
+            new Circle(randomX, randomY, 0)
         )
     }
 }
