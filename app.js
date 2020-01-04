@@ -78,10 +78,10 @@ function Circle(x, y, r) {
     }
 
     this.update = function () {
-        this.x += this.dx
-        this.y += this.dy
-        // this.x = mouseX
-        // this.y = mouseY
+        // this.x += this.dx
+        // this.y += this.dy
+        this.x = mouseX
+        this.y = mouseY
 
         if (
             this.x + this.r > canvas.width ||
