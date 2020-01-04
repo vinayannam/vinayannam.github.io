@@ -13,23 +13,13 @@ window.addEventListener('resize', function () {
 
 const prop = {
     colors: ['#2C3E50', '#E74C3C', '#ECF0F1', '#3498DB', '#2980B9'],
-    linkRadius: 100,
+    linkRadius: 50,
     count: 150
 }
 
 let checkDistance = function (x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 };
-
-var mouseX = 0;
-var mouseY = 0;
-
-canvas.addEventListener('mousemove', function (event) {
-    var rect = canvas.getBoundingClientRect();
-    mouseX = event.clientX - rect.left;
-    mouseY = event.clientY - rect.top;
-    alert(mouseX + '' + mouseY)
-})
 
 let linkPoints = function (circle, circles) {
     for (let i = 0; i < circles.length; i++) {
@@ -120,7 +110,7 @@ function init() {
         const randomY = Math.random() * canvas.height
         const randomR = Math.random() * 8
         circleArray.push(
-            new Circle(randomX, randomY, 0)
+            new Circle(randomX, randomY, randomR)
         )
     }
 }
