@@ -13,7 +13,7 @@ window.addEventListener('resize', function () {
 
 const prop = {
     colors: ['#2C3E50', '#E74C3C', '#ECF0F1', '#3498DB', '#2980B9'],
-    linkRadius: 50,
+    linkRadius: 100,
     count: 150
 }
 
