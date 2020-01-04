@@ -84,6 +84,8 @@ function Circle(x, y, r) {
     this.update = function () {
         this.x += this.dx
         this.y += this.dy
+        // this.x = mouseX
+        // this.y = mouseY
 
         if (
             this.x + this.r > canvas.width ||
@@ -104,9 +106,8 @@ function Circle(x, y, r) {
     this.draw = function () {
         c.beginPath()
         c.arc(
-            mouseX, mouseY,
-            // this.x,
-            // this.y,
+            this.x,
+            this.y,
             Math.abs(this.r),
             0,
             Math.PI * 2
