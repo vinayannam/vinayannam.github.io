@@ -24,14 +24,10 @@ let checkDistance = function (x1, y1, x2, y2) {
 var mouseX = 0;
 var mouseY = 0;
 
-let mousePos = function (canvas, event) {
+canvas.addEventListener('mousemove', function (event) {
     var rect = canvas.getBoundingClientRect();
     mouseX = event.clientX - rect.left;
     mouseY = event.clientY - rect.top;
-}
-
-canvas.addEventListener('mousemove', function (event) {
-    mousePos(canvas, event)
 })
 
 let linkPoints = function (circle, circles) {
