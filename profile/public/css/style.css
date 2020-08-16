@@ -228,7 +228,7 @@ a:active {
 }
 
 .shadow-new-custom {
-    box-shadow: 0 0rem 1rem rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 0rem 3rem rgba(255, 255, 255, 0.15) !important;
 }
 
 .border-custom {
@@ -311,4 +311,14 @@ a:active {
 
 .yellow {
     color: var(--decoraton);
+}
+
+.video-holder {
+    width: 300px !important;
+    height: auto !important;
+}
+
+/* Hide Play button + controls on iOS */
+video::-webkit-media-controls {
+    display: none !important;
 }
