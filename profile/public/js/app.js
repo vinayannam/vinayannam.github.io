@@ -1,7 +1,7 @@
-(function($) {
+(function ($) {
     "use strict";
 
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -13,11 +13,41 @@
             }
         }
     });
-    $('.js-scroll-trigger').click(function() {
+    $('.js-scroll-trigger').click(function () {
         $('.navbar-collapse').collapse('hide');
     });
     $('body').scrollspy({
         target: '#sideNav'
     });
+
+    // var abrevations = {
+    //     'IIIT': 'International Institute of Technology',
+    //     // 'International Institute of Technology': 'IIIT',
+    //     'ASU': 'Arizona State University',
+    //     // 'Arizona State University': 'ASU',
+    //     'NER': 'Natural Entity Recognition',
+    //     // 'Natural Entity Recognition': 'NER',
+    //     'CTF': 'Capture the Flag',
+    //     // 'Capture the Flag': 'CTF'
+    // }
+
+    var abrevations = {
+        'IIIT': 'International Institute of Technology',
+        'ASU': 'Arizona State University',
+        'NER': 'Natural Entity Recognition',
+        'CTF': 'Capture the Flag',
+        'CNN': 'Convolutional Neural Network'
+    }
+    for (var k in abrevations) {
+        abrevations[abrevations[k]] = k
+    }
+
+    $('.expand').mouseenter(function () {
+        $(this).text(abrevations[$(this).text()])
+        $(this).css('color', 'yellow')
+    }).mouseleave(function () {
+        $(this).text(abrevations[$(this).text()])
+        $(this).css('color', 'white')
+    })
 
 })(jQuery);
