@@ -1,3 +1,4 @@
+// Network 
 const canvas = document.getElementById('canvas')
 const c = canvas.getContext('2d')
 
@@ -128,3 +129,33 @@ function updateAll() {
 
 init()
 updateAll()
+
+
+// Type writer Script
+
+var dataText = ["DIFFERENT SIZE.", "DIFFERENT PACE.", "DIFFERENT COLOR.", "WE CONNECT.", "WE LEARN.", "WE SHARE.", "THANK YOU FOR VISITING."];
+
+function typeWriter(text, i, fnCallback) {
+    if (i < (text.length)) {
+        document.getElementById('type').innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+        setTimeout(function () {
+            typeWriter(text, i + 1, fnCallback)
+        }, 100);
+    } else if (typeof fnCallback == 'function') {
+        setTimeout(fnCallback, 700);
+    }
+}
+
+function StartTextAnimation(i) {
+    if (typeof dataText[i] == 'undefined') {
+        setTimeout(function () {
+            StartTextAnimation(0);
+        }, 200);
+    }
+    if (i < dataText[i].length) {
+        typeWriter(dataText[i], 0, function () {
+            StartTextAnimation(i + 1);
+        });
+    }
+}
+StartTextAnimation(0);
