@@ -1,3 +1,7 @@
+// page hit
+function cb(response) {
+    document.getElementById('visits').innerText = response.value;
+}
 // Network 
 const canvas = document.getElementById('canvas')
 const c = canvas.getContext('2d')
