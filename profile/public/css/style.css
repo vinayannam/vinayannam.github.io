@@ -318,6 +318,11 @@ a:active {
     height: auto !important;
 }
 
+.photo-holder {
+    width: 500px !important;
+    height: auto !important;
+}
+
 /* Hide Play button + controls on iOS */
 video::-webkit-media-controls {
     display: none !important;

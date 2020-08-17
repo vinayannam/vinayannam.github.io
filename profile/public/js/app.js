@@ -36,7 +36,9 @@
         'ASU': 'Arizona State University',
         'NER': 'Natural Entity Recognition',
         'CTF': 'Capture the Flag',
-        'CNN': 'Convolutional Neural Network'
+        'CNN': 'Convolutional Neural Network',
+        'SA': 'Short Answer',
+        'LA': 'Long Answer',
     }
     for (var k in abrevations) {
         abrevations[abrevations[k]] = k
