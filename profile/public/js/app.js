@@ -39,6 +39,9 @@
         'CNN': 'Convolutional Neural Network',
         'SA': 'Short Answer',
         'LA': 'Long Answer',
+        'IOT': 'Internet of Things',
+        'ERP': 'Enterprise Resource Planning',
+        'ADAA': 'Advanced Design and Analysis of Algorithms'
     }
     for (var k in abrevations) {
         abrevations[abrevations[k]] = k

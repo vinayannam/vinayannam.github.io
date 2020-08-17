@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="anime-master/anime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- <div class="landing">
+        <div class="hero-title" id="type">JOB SEQUENCING WITH DEADLINE</div>
+    </div> -->
+    <div class="playground">
+        <transition-group name="flip-list" id="zombie-land" class="zombie-land" tag="div">
+            <lane class="lane" v-for="job in jobs" v-bind:id="job.text" v-bind:profit="job.profit"
+                v-bind:deadline="job.deadline" v-bind:key="job.id" v-bind:job="job.text"></lane>
+        </transition-group>
+        <div id="river" class="river">
+            <current v-for="job in jobs" v-bind:id="job.text" v-bind:key="job.id" v-bind:job="job.text"></current>
+        </div>
+        <div id="pure-land" class="pure-land">
+            <stand v-for="job in jobs" v-bind:id="job.text" v-bind:key="job.id" v-bind:job="job.text"></stand>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
