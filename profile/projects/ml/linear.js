@@ -1,3 +1,4 @@
+// Thank You Coding Train for winderful series of P5 tutorials.
 var data = [];
 
 var numberOfRows;
