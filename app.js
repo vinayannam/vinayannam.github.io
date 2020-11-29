@@ -137,7 +137,7 @@ updateAll()
 
 // Type writer Script
 
-var dataText = ["DIFFERENT SIZE.", "DIFFERENT PACE.", "DIFFERENT COLOR.", "WE CONNECT.", "WE LEARN.", "WE SHARE.", "THANK YOU FOR VISITING."];
+var dataText = ["DIFFERENT SIZE", "DIFFERENT PACE", "DIFFERENT COLOR", "WE CONNECT", "WE LEARN", "WE SHARE", "THANK YOU FOR VISITING"];
 
 function typeWriter(text, i, fnCallback) {
     if (i < (text.length)) {
